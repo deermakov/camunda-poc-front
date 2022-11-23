@@ -13,7 +13,7 @@ const Form = (props) => {
       <div>Введи 'logo' - появится logo</div>
       <Input text={inputText} handleInput={handleInput}/>
       <Output text={inputText}/>
-      <Logo doDisplay={inputText === 'logo'}/>
+      <Logo text={inputText}/>
     </form>
   )
 }

@@ -19,7 +19,8 @@ function App() {
           Learn React
         </a>
       </header>
-      <Form initialText='tes'/>
+      <Form initialText='Form 1 text'/>
+      <Form initialText='Form 2 text'/>
     </div>
   );
 }

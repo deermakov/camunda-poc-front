@@ -19,8 +19,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <Form initialText='Form 1 text'/>
-      <Form initialText='Form 2 text'/>
+      <Form initialText='Initial text'/>
     </div>
   );
 }

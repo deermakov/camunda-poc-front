@@ -1,8 +1,8 @@
-const startProcess = (processKey, processVariables = {}) =>
+const startProcess = (processParams) =>
   fetch(`${process.env.REACT_APP_BACKEND_URL}/start`,
     {method: "POST",
         ...getCommonJsonRequestProps(),
-        body: JSON.stringify(processVariables && {variables: processVariables})
+        body: JSON.stringify(processParams)
       }
     ).then(response => response.json());
 

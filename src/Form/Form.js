@@ -15,7 +15,7 @@ const Form = (props) => {
       <Input text={inputText} handleInput={handleInput}/>
       <Output text={inputText}/>
       <Logo text={inputText}/>
-      <StartProcessButton/>
+      <StartProcessButton startParam={inputText}/>
     </form>
   )
 }

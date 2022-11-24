@@ -2,6 +2,7 @@ import Input from "../Input/Input";
 import Output from "../Output/Output";
 import Logo from "../Logo/Logo";
 import {useState} from "react";
+import StartProcessButton from "../StartProcessButton/StartProcessButton";
 
 const Form = (props) => {
   const {initialText} = props;
@@ -14,6 +15,7 @@ const Form = (props) => {
       <Input text={inputText} handleInput={handleInput}/>
       <Output text={inputText}/>
       <Logo text={inputText}/>
+      <StartProcessButton/>
     </form>
   )
 }

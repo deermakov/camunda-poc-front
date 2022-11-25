@@ -1,7 +1,7 @@
 # camunda-poc-front
 Frontend app of proof-of-concept for Camunda 8
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [npx create-react-app my-app](https://reactjs.org/docs/create-a-new-react-app.html).
 
 ## Available Scripts
 

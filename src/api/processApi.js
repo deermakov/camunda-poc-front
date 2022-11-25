@@ -17,7 +17,9 @@ export const submitData = (processParams) =>
       ...getCommonJsonRequestProps(),
       body: JSON.stringify(processParams)
     }
-  ).then(response => response.json());
+  ).catch((error) => {
+    console.error(error);
+  });
 
 
 const getCommonJsonRequestProps = () => {

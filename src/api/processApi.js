@@ -21,6 +21,15 @@ export const submitData = (processParams) =>
     console.error(error);
   });
 
+export const terminate = (processParams) =>
+  fetch(`${process.env.REACT_APP_BACKEND_URL}/terminate`,
+    {method: "POST",
+      ...getCommonJsonRequestProps(),
+      body: JSON.stringify(processParams)
+    }
+  ).catch((error) => {
+    console.error(error);
+  });
 
 const getCommonJsonRequestProps = () => {
   const headers = {Accept: "application/json", "Content-Type": "application/json;charset=UTF-8"};

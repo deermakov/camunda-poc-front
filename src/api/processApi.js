@@ -31,13 +31,14 @@ export const terminate = (processParams) =>
     console.error(error);
   });
 
-export const getTaskList = (assignee) =>
+export const getTaskList = (assignee, taskListSetter) =>
   fetch(`${process.env.REACT_APP_BACKEND_URL}/tasklist/${assignee}`,
     {method: "GET",
       ...getCommonJsonRequestProps()
     }
   ).then(response => response.json())
-  .then(json => {console.log(json)})
+  .then(json => {console.log(json); return json;})
+  .then(taskListSetter)
   .catch((error) => {
     console.error(error);
   });

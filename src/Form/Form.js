@@ -5,6 +5,7 @@ import {useState} from "react";
 import StartProcessButton from "../StartProcessButton/StartProcessButton";
 import SubmitDataButton from "../SubmitDataButton/SubmitDataButton";
 import TerminateButton from "../TerminateButton/TerminateButton";
+import TaskListButton from "../TaskList/TaskListButton";
 
 const Form = (props) => {
   const {initialText} = props;
@@ -22,6 +23,7 @@ const Form = (props) => {
       <Output text={processId}/>
       <SubmitDataButton processId={processId} inputData={inputText}/>
       <TerminateButton processId={processId} />
+      <TaskListButton assignee = "demo"/>
     </form>
   )
 }

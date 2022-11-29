@@ -31,6 +31,18 @@ export const terminate = (processParams) =>
     console.error(error);
   });
 
+export const getTaskList = (assignee) =>
+  fetch(`${process.env.REACT_APP_BACKEND_URL}/tasklist/${assignee}`,
+    {method: "GET",
+      ...getCommonJsonRequestProps()
+    }
+  ).then(response => response.json())
+  .then(json => {console.log(json)})
+  .catch((error) => {
+    console.error(error);
+  });
+
+
 const getCommonJsonRequestProps = () => {
   const headers = {Accept: "application/json", "Content-Type": "application/json;charset=UTF-8"};
 

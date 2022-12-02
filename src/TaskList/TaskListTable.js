@@ -17,8 +17,8 @@ const TaskListTable = (props) => {
           <TableRow>
             <TableCell>Process instance key</TableCell>
             <TableCell>Process external id</TableCell>
-            <TableCell>Job key</TableCell>
-            <TableCell>Process step id</TableCell>
+            <TableCell>User job key</TableCell>
+            <TableCell>Process element id</TableCell>
             <TableCell>Assignee</TableCell>
             <TableCell>Actions</TableCell>
           </TableRow>
@@ -36,7 +36,7 @@ const TaskListTable = (props) => {
               <TableCell>{row.key}</TableCell>
               <TableCell>{row.elementId}</TableCell>
               <TableCell>{row.assignee}</TableCell>
-              <TableCell><TaskActions processId={row.process.processExternalId}/></TableCell>
+              <TableCell><TaskActions processId={row.process.processExternalId} taskKey={row.key}/></TableCell>
             </TableRow>
           ))}
         </TableBody>

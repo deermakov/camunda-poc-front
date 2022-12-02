@@ -4,13 +4,13 @@ import TerminateButton from "../TerminateButton/TerminateButton";
 import Input from "../Input/Input";
 
 const TaskActions = (props) => {
-  const {processId} = props;
+  const {processId, taskKey} = props;
   const [text, setText] = useState(null);
   const handleInput = (event) => setText(event.target.value);
   return (
     <div>
       <Input text={text} handleInput={handleInput}/>
-      <SubmitDataButton processId={processId} inputData={text}/>
+      <SubmitDataButton taskKey={taskKey} inputData={text}/>
       <TerminateButton processId={processId} />
     </div>
   )

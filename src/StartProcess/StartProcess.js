@@ -10,12 +10,12 @@ const StartProcess = (props) => {
 
   const handleInput = (event) => setText(event.target.value);
 
-  const processParams = {startParam};
+  const processParams = {"startParam": text};
   const handleProcessStart = (processId) => setProcessId(processId);
   const onClick = () => startProcess(processParams, handleProcessStart);
 
   return (
-    <div>
+    <div style={{whiteSpace: "nowrap"}}>
       Initial text
       <Input text={text} handleInput={handleInput}/>
       <input type='button' value='Start process' onClick={onClick}/>

@@ -5,6 +5,7 @@ import {TableRow} from "@mui/material";
 import {TableCell} from "@mui/material";
 import {Paper} from "@mui/material";
 import {TableBody} from "@mui/material";
+import TaskActions from "./TaskActions";
 
 const TaskListTable = (props) => {
   const {rows} = props;
@@ -16,9 +17,10 @@ const TaskListTable = (props) => {
           <TableRow>
             <TableCell>Process instance key</TableCell>
             <TableCell>Process external id</TableCell>
-            <TableCell align="right">Job key</TableCell>
-            <TableCell align="right">Process step id</TableCell>
-            <TableCell align="right">Assignee</TableCell>
+            <TableCell>Job key</TableCell>
+            <TableCell>Process step id</TableCell>
+            <TableCell>Assignee</TableCell>
+            <TableCell>Actions</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -28,12 +30,13 @@ const TaskListTable = (props) => {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.value.processInstanceKey}
+                {row.process.processInstanceKey}
               </TableCell>
-              <TableCell align="right">...todo...</TableCell>
-              <TableCell align="right">{row.key}</TableCell>
-              <TableCell align="right">{row.value.elementId}</TableCell>
-              <TableCell align="right">{row.value.customHeaders["io.camunda.zeebe:assignee"]}</TableCell>
+              <TableCell>{row.process.processExternalId}</TableCell>
+              <TableCell>{row.key}</TableCell>
+              <TableCell>{row.elementId}</TableCell>
+              <TableCell>{row.assignee}</TableCell>
+              <TableCell><TaskActions processId={row.process.processExternalId}/></TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {getTaskList} from "../api/processApi";
 import TaskListTable from "./TaskListTable";
 
-const TaskListButton = (props) => {
+const GetTaskListButton = (props) => {
   const {assignee} = props;
   const [taskList, setTaskList] = useState([]);
   const onClick = () => getTaskList(assignee, setTaskList);
@@ -14,4 +14,4 @@ const TaskListButton = (props) => {
   )
 }
 
-export default TaskListButton
+export default GetTaskListButton

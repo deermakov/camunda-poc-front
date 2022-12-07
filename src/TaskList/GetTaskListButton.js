@@ -1,15 +1,15 @@
-import React, {useState} from "react";
+import React, {useContext} from "react";
 import {getTaskList} from "../api/processApi";
-import TaskListTable from "./TaskListTable";
+import {TaskListContext} from "../Form/Form";
 
 const GetTaskListButton = (props) => {
   const {assignee} = props;
-  const [taskList, setTaskList] = useState([]);
-  const onClick = () => getTaskList(assignee, setTaskList);
+  const [taskListRows, setTaskListRows] = useContext(TaskListContext);
+  const onClick = () => getTaskList(assignee, setTaskListRows);
+
   return (
     <div>
       <input type='button' value='Get TaskList' onClick={onClick}/>
-      <TaskListTable rows={taskList} />
     </div>
   )
 }

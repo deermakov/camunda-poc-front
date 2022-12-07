@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {startProcess} from "../api/processApi";
 import Input from "../Input/Input";
 import Output from "../Output/Output";

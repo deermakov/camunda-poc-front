@@ -6,9 +6,11 @@ import {TableCell} from "@mui/material";
 import {Paper} from "@mui/material";
 import {TableBody} from "@mui/material";
 import TaskActions from "./TaskActions";
+import {useContext} from "react";
+import {TaskListContext} from "../Form/Form";
 
-const TaskListTable = (props) => {
-  const {rows} = props;
+const TaskListTable = () => {
+  const [taskListRows, setTaskListRows] = useContext(TaskListContext);
 
   return (
     <TableContainer component={Paper}>
@@ -24,7 +26,7 @@ const TaskListTable = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {taskListRows.map((row) => (
             <TableRow
               key={row.key}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

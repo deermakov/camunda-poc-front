@@ -7,6 +7,7 @@ const TaskActions = (props) => {
   const {processId, taskKey} = props;
   const [text, setText] = useState(null);
   const handleInput = (event) => setText(event.target.value);
+
   return (
     <div>
       <Input text={text} handleInput={handleInput}/>

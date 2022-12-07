@@ -1,5 +1,3 @@
-import React, {useState, useEffect} from 'react';
-
 const Input = (props) => {
   const {text, handleInput} = props;
   return <input type='text' value={text} onChange={handleInput}/>

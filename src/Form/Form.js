@@ -14,7 +14,7 @@ const Form = (props) => {
       <form>
         <StartProcess startParam={initialText} />
         <GetTaskListButton assignee = "demo"/>
-        <TaskListTable />
+        <TaskListTable assignee = "demo" />
       </form>
     </TaskListContext.Provider>
   )

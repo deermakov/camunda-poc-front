@@ -6,11 +6,22 @@ import {TableCell} from "@mui/material";
 import {Paper} from "@mui/material";
 import {TableBody} from "@mui/material";
 import TaskActions from "./TaskActions";
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
 import {TaskListContext} from "../Form/Form";
+import {getTaskList} from "../api/processApi";
 
-const TaskListTable = () => {
+const TaskListTable = (props) => {
+  const {assignee} = props;
+  const fetched = 123; // значение неважно, главное, что не меняется (на это завязан useEffect())
   const [taskListRows, setTaskListRows] = useContext(TaskListContext);
+
+  // Однократная загрузка tasklist'а при отрисовке таблицы
+  useEffect( () => {
+    async function fetchData(){
+      await getTaskList(assignee, setTaskListRows);
+    }
+    fetchData();
+  }, [fetched])
 
   return (
     <TableContainer component={Paper}>

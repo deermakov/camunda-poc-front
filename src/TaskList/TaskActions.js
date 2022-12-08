@@ -6,7 +6,7 @@ import Input from "../Input/Input";
 const TaskActions = (props) => {
   const {processId, taskKey} = props;
   const [disabled, setDisabled] = useState(false);
-  const [text, setText] = useState(null);
+  const [text, setText] = useState("");
   const handleInput = (event) => setText(event.target.value);
   const clickHandler = () => setDisabled(true);
 

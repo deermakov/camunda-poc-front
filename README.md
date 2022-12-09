@@ -3,6 +3,10 @@ Frontend app of proof-of-concept for Camunda 8
 
 This project was bootstrapped with [npx create-react-app my-app](https://reactjs.org/docs/create-a-new-react-app.html).
 
+BPMN visualization is done by:
+- bpmn.io: https://github.com/bpmn-io/bpmn-js-examples
+- Camunda: https://github.com/camunda/camunda-bpmn-js
+
 ## Available Scripts
 
 In the project directory, you can run:

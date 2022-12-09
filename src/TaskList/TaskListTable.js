@@ -12,7 +12,6 @@ import {getTaskList} from "../api/processApi";
 
 const TaskListTable = (props) => {
   const {assignee} = props;
-  const fetched = 123; // значение неважно, главное, что не меняется (на это завязан useEffect())
   const [taskListRows, setTaskListRows] = useContext(TaskListContext);
 
   // Однократная загрузка tasklist'а при отрисовке таблицы
@@ -21,7 +20,7 @@ const TaskListTable = (props) => {
       await getTaskList(assignee, setTaskListRows);
     }
     fetchData();
-  }, [fetched])
+  }, [])
 
   return (
     <TableContainer component={Paper}>

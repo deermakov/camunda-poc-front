@@ -1,31 +1,31 @@
 import BpmnModeler from 'camunda-bpmn-js/lib/camunda-platform/Modeler';
 import 'camunda-bpmn-js/dist/assets/camunda-platform-modeler.css';
 import {useEffect} from "react";
+import {getBpmnFile} from "../api/processApi";
 
 const CamundaBpmnViewer = (props) => {
 
-  const unchangeable = 123;
-
   useEffect( () => {
     async function drawModeler(){
-      var bpmnModeler = new BpmnModeler({
+      console.log('CamundaBpmnViewer: diagram loading');
+
+      const bpmnModeler = new BpmnModeler({
         container: '#camundaBpmCanvas',
         propertiesPanel: {
           parent: '#camundaBpmProperties'
         }
       });
 
-      try {
-        fetch("./poc-process.bpmn")
-          .then(response => response.text())
-          .then(text => bpmnModeler.importXML(text));
-        console.log('CamundaBpmnViewer: success!');
-      } catch (err) {
-        console.error('CamundaBpmnViewer: something went wrong:', err);
+      const bpmnFileContentProcessor = (text) => {
+        bpmnModeler.importXML(text);
+        console.log('CamundaBpmnViewer: diagram shown');
       }
+
+      getBpmnFile(bpmnFileContentProcessor);
     }
+
     drawModeler();
-  }, [unchangeable])
+  }, [])
 
   return (
     <div id="camundaBpmContent" style={{width: "100%", backgroundColor: "black", paddingTop: "1px"}}>

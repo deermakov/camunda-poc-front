@@ -43,6 +43,16 @@ export const getTaskList = (assignee, taskListSetter) =>
     console.error(error);
   });
 
+export const getBpmnFile = (fileContentProcessor) =>
+  fetch(`${process.env.REACT_APP_BACKEND_URL}/bpmn-file`,
+    {method: "GET",
+      ...getCommonJsonRequestProps()
+    }
+  ).then(response => response.text())
+    .then(fileContentProcessor)
+    .catch((error) => {
+      console.error(error);
+    });
 
 const getCommonJsonRequestProps = () => {
   const headers = {Accept: "application/json", "Content-Type": "application/json;charset=UTF-8"};

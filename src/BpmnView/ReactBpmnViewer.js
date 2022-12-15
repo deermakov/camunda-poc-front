@@ -2,6 +2,8 @@ import ReactBpmn from 'react-bpmn';
 
 const ReactBpmnViewer = (props) => {
 
+  const bpmnFileUrl = `${process.env.REACT_APP_BACKEND_URL}/bpmn-file`
+
   const onShown = () => {
     console.log('ReactBpmnViewer: diagram shown');
   }
@@ -18,7 +20,7 @@ const ReactBpmnViewer = (props) => {
     <div style={{width: "100%", paddingTop: "1px"}}>
       <div style={{backgroundColor:"white"}}>Bpmn.io Bpmn Viewer</div>
       <ReactBpmn
-        url="poc-process.bpmn"
+        url={bpmnFileUrl}
         onShown={ onShown }
         onLoading={ onLoading }
         onError={ onError }

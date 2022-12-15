@@ -48,11 +48,24 @@ export const getBpmnFile = (fileContentProcessor) =>
     {method: "GET",
       ...getCommonJsonRequestProps()
     }
-  ).then(response => response.text())
-    .then(fileContentProcessor)
-    .catch((error) => {
-      console.error(error);
-    });
+  )
+  .then(response => response.text())
+  .then(fileContentProcessor)
+  .catch((error) => {
+    console.error(error);
+  });
+
+export const getHeatmap = (heatmapProcessor) =>
+  fetch(`${process.env.REACT_APP_BACKEND_URL}/heatmap`,
+    {method: "GET",
+      ...getCommonJsonRequestProps()
+    }
+  )
+  .then(response => response.json())
+  .then(heatmapProcessor)
+  .catch((error) => {
+    console.error(error);
+  });
 
 const getCommonJsonRequestProps = () => {
   const headers = {Accept: "application/json", "Content-Type": "application/json;charset=UTF-8"};

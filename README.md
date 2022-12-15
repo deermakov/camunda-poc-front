@@ -7,6 +7,8 @@ BPMN visualization is done by:
 - bpmn.io: https://github.com/bpmn-io/bpmn-js-examples
 - Camunda: https://github.com/camunda/camunda-bpmn-js
 
+Heatmap: by heatmap.js
+
 ## Available Scripts
 
 In the project directory, you can run:

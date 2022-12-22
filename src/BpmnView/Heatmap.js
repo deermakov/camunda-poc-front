@@ -12,11 +12,13 @@ const Heatmap = (props) => {
           // enter n keys between 0 and 1 here
           // for gradient color customization
           '.2': 'blue',
-          '.4': 'red',
-          '.6': 'orange',
-          '.8': 'yellow',
-          '.95': 'white'
-        }
+          '.4': 'green',
+          '.6': 'yellow',
+          '.8': 'orange',
+          '.95': 'red'
+        },
+        maxOpacity: .5,
+        minaOpacity: .3
       });
 
       const heatmapProcessor = (json) => {

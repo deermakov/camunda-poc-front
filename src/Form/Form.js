@@ -19,9 +19,9 @@ const Form = (props) => {
           <GetTaskListButton assignee = "demo"/>
           <TaskListTable assignee = "demo" />
         </form>
+        <ReactBpmnViewer/>
+        <CamundaBpmnViewer/>
       </TaskListContext.Provider>
-      <ReactBpmnViewer/>
-      <CamundaBpmnViewer/>
     </div>
   )
 }
